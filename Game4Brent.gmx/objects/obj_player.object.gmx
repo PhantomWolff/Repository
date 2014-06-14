@@ -26,23 +26,26 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize Variables
-grav = 0.3;
+grav = 0.2;
 hsp = 0;
 hsp_carry = 0;
 vsp = 0;
-movespeed_normal = 3.5;
-movespeed_powerup = 6;
-jumpspeed = 10;
+movespeed_normal = 3;
+movespeed_powerup = 5;
+jumpspeed = 8;
 djump = true;
-djumpspeed = 8;
+djumpspeed = 6;
 grounded = 0; //Touching the ground? 0 = no, 1 = yes.
 dir = 1;
+character = 1;
 
-
+sprite_main = spr_player_main;  //These are for changing the player's character sets
+sprite_walk = spr_player_walk;
+sprite_jump = spr_player_jump;
 
 
 //Other configurations
-image_speed = 0.15; //Sprite animation speed
+image_speed = 0.12; //Sprite animation speed
 sprite_index = spr_player_main; //Make sure initial sprite is set to default
 movespeed = movespeed_normal; //Set the intial movespeed
 if (global.checkpointR == room) //decide to spawn on checkpoint
@@ -77,13 +80,33 @@ key_left = keyboard_check_direct(ord('A'));
 key_right = keyboard_check_direct(ord('D'));
 key_jump = keyboard_check_pressed(ord('W'));
 key_down = keyboard_check_direct(ord('S'));
+key_change_character = keyboard_check_released(ord('C'));
 
 
-//React To Movements
+//React To Inputs
 move = -key_left + key_right;
 hsp = move * movespeed;
 
 if (vsp &lt; 15) vsp += grav;
+
+//Change Characters
+if(key_change_character)
+{
+    if(character == 1)
+    {
+        sprite_main = spr_player_warrior_main;
+        sprite_walk = spr_player_warrior_walk;
+        sprite_jump = spr_player_warrior_jump;  
+        character = 2;
+    }
+    else if(character == 2)
+    {
+        sprite_main = spr_player_main;
+        sprite_walk = spr_player_walk;
+        sprite_jump = spr_player_jump;
+        character = 1;
+    }
+}
 
 //Direction and Animation
 if(key_left)
@@ -91,7 +114,7 @@ if(key_left)
     dir = -1;
     if(grounded == 1) //Ensure you're grounded
     {
-    sprite_index = spr_player_walk;
+        sprite_index = sprite_walk;
     }
 }
 if(key_right)
@@ -99,7 +122,7 @@ if(key_right)
     dir = 1;
     if(grounded == 1) //Ensure you're grounded
     {
-    sprite_index = spr_player_walk;
+        sprite_index = sprite_walk;
     }
 }
 image_xscale = dir; //Set the direction of the player image
@@ -108,21 +131,21 @@ image_xscale = dir; //Set the direction of the player image
 move = -key_left + key_right;
 hsp = move * movespeed;
 if (vsp &lt; 15) vsp += grav;
-if((move == 0) &amp;&amp; (grounded == 1)){sprite_index = spr_player_main;}
+if((move == 0) &amp;&amp; (grounded == 1)){sprite_index = sprite_main;}
 
 if (key_jump)
 {
     if (place_meeting(x,y+1,obj_wall))
     {
         vsp = -jumpspeed;
-        sprite_index = spr_player_jump;
+        sprite_index = sprite_jump;
     }   
     else
     {
         if(djump)
         {
             vsp = -djumpspeed;
-            sprite_index = spr_player_jump;
+            sprite_index = sprite_jump;
             djump = 0;
         }
     }
@@ -153,7 +176,7 @@ if (place_meeting(x,y+vsp,obj_wall)){
         grounded = 1;
         djump = 1;
     }
-    spr_index = spr_player_main;
+    spr_index = sprite_main;
     vsp = 0;
 }
 else
