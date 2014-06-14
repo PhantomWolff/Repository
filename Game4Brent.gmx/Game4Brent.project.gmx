@@ -11,7 +11,6 @@
       <sprite>sprites\spr_player_walk</sprite>
       <sprite>sprites\spr_player_jump</sprite>
     </sprites>
-    <sprites name="Enemies"/>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
