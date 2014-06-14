@@ -25,9 +25,78 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize Variables
+            <string>///Initialze Variables
+
+dir = 1;
+movespeed = 2;
+grav = 0.5;
+hsp = 0;
+vsp = 0;
+
+image_speed = 0.1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Default Enemy Code
+
+image_xscale = dir;
+hsp = dir * movespeed;
+vsp += grav;
+
+//Horizontal Collision
+if (place_meeting(x+hsp,y,obj_wall))
+{
+    while(!place_meeting(x+sign(hsp),y,obj_wall)){
+        x += sign(hsp);
+    }
+    hsp = 0;
+    dir *= -1;
+}
+x += hsp;
 
 
+//Vertical Collision
+if (place_meeting(x,y+vsp,obj_wall))
+{
+    while(!place_meeting(x,y+sign(vsp),obj_wall)){
+        y += sign(vsp);
+    }
+    vsp = 0;
+}
+
+if(place_meeting(x,y,obj_player))
+{
+    if(obj_player.y &lt; y-16)
+    {
+        with(obj_player){
+        vsp = -6;
+        }
+        instance_destroy();
+    }
+    else
+    {
+        scr_death();
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -45,5 +114,8 @@
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>20,24</point>
+    <point>24,24</point>
+  </PhysicsShapePoints>
 </object>
