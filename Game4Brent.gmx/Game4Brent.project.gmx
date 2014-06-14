@@ -18,6 +18,7 @@
     </sprites>
     <sprites name="Walls">
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_platform</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
