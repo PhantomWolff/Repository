@@ -62,13 +62,13 @@ key_jump = keyboard_check_pressed(vk_space);
 
 
 //React To Movements
-move = left_key + right_key;
+move = key_left + key_right;
 hsp = move * movespeed;
 
 if (vsp &lt; 10) vsp += grav;
 
 //Floor Collision
-if (place_meeting(x, y + 1, obj_wall));
+if (place_meeting(x, y + 1, obj_wall))
 {
     vsp = key_jump * -jumpspeed;
 }
@@ -83,7 +83,7 @@ if (place_meeting(x + hsp, y, obj_wall))
     hsp = 0;
 }
 
-x += hps;
+x += hsp;
 
 //Vertical Collision
 if (place_meeting(x, y + vsp, obj_wall))
