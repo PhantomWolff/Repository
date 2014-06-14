@@ -37,19 +37,20 @@ djump = true;
 djumpspeed = 8;
 grounded = 0; //Touching the ground? 0 = no, 1 = yes.
 dir = 1;
-
-
-
+key_down = 0;
 
 //Other configurations
 image_speed = 0.15; //Sprite animation speed
 sprite_index = spr_player_main; //Make sure initial sprite is set to default
 movespeed = movespeed_normal; //Set the intial movespeed
+
 if (global.checkpointR == room) //decide to spawn on checkpoint
 {
     x = global.checkpointx;
     y = global.checkpointy;
 }
+
+
 </string>
           </argument>
         </arguments>
@@ -134,8 +135,10 @@ hsp_carry = 0;
 
 
 //Horizontal Collision
-if (place_meeting(x+hsp,y,obj_wall)){
-    while(!place_meeting(x+sign(hsp_final),y,obj_wall)){
+if (place_meeting(x+hsp,y,obj_wall))
+{
+    while(!place_meeting(x+sign(hsp_final),y,obj_wall))
+    {
         x += sign(hsp_final);
     }
     hsp_final = 0;
@@ -144,8 +147,10 @@ if (place_meeting(x+hsp,y,obj_wall)){
 x += hsp_final;
 
 //Vertical Collision
-if (place_meeting(x,y+vsp,obj_wall)){
-    while(!place_meeting(x,y+sign(vsp),obj_wall)){
+if (place_meeting(x,y+vsp,obj_wall))
+{   
+    while(!place_meeting(x,y+sign(vsp),obj_wall))
+    {
         y += sign(vsp);
     }
     if (sign(vsp) == 1)
@@ -158,8 +163,9 @@ if (place_meeting(x,y+vsp,obj_wall)){
 }
 else
 {
-grounded = 0;
+    grounded = 0;
 }
+
 y += vsp;
 
 </string>

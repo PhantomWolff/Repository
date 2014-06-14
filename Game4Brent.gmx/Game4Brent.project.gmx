@@ -20,8 +20,10 @@
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_platform</sprite>
     </sprites>
-    <sprite>sprites\spr_checkpoint</sprite>
-    <sprite>sprites\spr_checkpoint_activated</sprite>
+    <sprites name="Checkpoint">
+      <sprite>sprites\spr_checkpoint_activated</sprite>
+      <sprite>sprites\spr_checkpoint</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -33,6 +35,7 @@
       <object>objects\obj_default_enemy</object>
     </objects>
     <object>objects\obj_player</object>
+    <object>objects\obj_platform</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_checkpoint</object>
   </objects>
