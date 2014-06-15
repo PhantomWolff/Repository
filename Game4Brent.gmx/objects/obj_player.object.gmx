@@ -81,6 +81,7 @@ key_right = keyboard_check_direct(ord('D'));
 key_jump = keyboard_check_pressed(ord('W'));
 key_down = keyboard_check_direct(ord('S'));
 key_change_character = keyboard_check_released(ord('C'));
+key_restart_room = keyboard_check_released(ord('R'));
 
 
 //React To Inputs
@@ -106,6 +107,12 @@ if(key_change_character)
         sprite_jump = spr_player_jump;
         character = 1;
     }
+}
+
+//Restart Room
+if(key_restart_room)
+{
+room_restart();
 }
 
 //Direction and Animation

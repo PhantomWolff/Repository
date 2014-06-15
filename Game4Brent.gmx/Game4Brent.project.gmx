@@ -4,7 +4,11 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="Music">
+      <sound>sound\snd_music_love</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_player_main</sprite>
@@ -31,7 +35,9 @@
       <sprite>sprites\spr_checkpoint</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_sky</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_death.gml</script>
@@ -47,6 +53,7 @@
       <object>objects\obj_wall</object>
       <object>objects\obj_platform_moving</object>
     </objects>
+    <object>objects\OBJ_CONTROLLER</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\RM_INITIALIZE</room>
