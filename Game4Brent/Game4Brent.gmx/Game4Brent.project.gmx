@@ -7,6 +7,8 @@
   <sounds name="sound">
     <sounds name="Music">
       <sound>sound\snd_music_love</sound>
+      <sound>sound\snd_music_main_menu</sound>
+      <sound>sound\snd_music_skyrim</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -38,9 +40,15 @@
       <sprite>sprites\spr_checkpoint</sprite>
     </sprites>
     <sprite>sprites\spr_weapon_test</sprite>
+    <sprites name="Buttons">
+      <sprite>sprites\spr_play_button</sprite>
+      <sprite>sprites\spr_play_button_hover</sprite>
+      <sprite>sprites\spr_play_button_click</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_sky</background>
+    <background>background\background1</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -59,9 +67,13 @@
     </objects>
     <object>objects\OBJ_CONTROLLER</object>
     <object>objects\obj_weapon</object>
+    <objects name="Buttons">
+      <object>objects\obj_play_button</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\RM_INITIALIZE</room>
+    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_playground</room>
   </rooms>
   <help>

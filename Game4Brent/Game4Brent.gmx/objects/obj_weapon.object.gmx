@@ -68,13 +68,13 @@ inst = instance_place(x, y, obj_default_enemy);
 
 if (inst != noone)
 {  
-   if (inst.health &lt;= 0)
+   if (inst.hp &lt;= 0)
    {   
         with (inst) instance_destroy();
    }
    else
    {
-        inst.health -= damage;
+        inst.hp -= damage;
    }     
 }
 

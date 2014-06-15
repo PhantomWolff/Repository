@@ -26,8 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>///CONTROLLER CODE
-
-audio_play_music(snd_music_love, true);
+if(room == rm_main_menu)
+{
+    audio_play_music(snd_music_main_menu, true);
+}
+else if(room == rm_playground)
+{
+    audio_play_music(snd_music_skyrim, true);
+}
 </string>
           </argument>
         </arguments>
