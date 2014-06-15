@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_weapon_test</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -54,12 +54,12 @@ damage = 20;
 
 if (obj_player.dir == 1)
 {
-    x = obj_player.x + 25; 
+    x = obj_player.x + 32; 
     y = obj_player.y;
 }
 else
 {
-    x = obj_player.x - 25; 
+    x = obj_player.x - 32; 
     y = obj_player.y;
 }
     
