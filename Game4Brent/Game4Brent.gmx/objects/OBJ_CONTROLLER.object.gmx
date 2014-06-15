@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-9999</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -88,8 +88,12 @@ background_x[0] = view_xview/4;
 
 if(room != rm_main_menu)
 {
-    draw_set_color(c_red);
+    draw_set_color(c_black);
     draw_set_alpha(1);
+    draw_set_font(fnt_HUD);
+    
+    draw_sprite(spr_gold_hud, 1, view_xview+318, view_yview+8);
+    draw_text(view_xview+340, view_yview, string(global.playergold));
     
     if(obj_player.hp &gt;= 1)
     {
