@@ -14,11 +14,13 @@
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_player_main</sprite>
+      <sprite>sprites\spr_player_hurt</sprite>
       <sprite>sprites\spr_player_down</sprite>
       <sprite>sprites\spr_player_walk</sprite>
       <sprite>sprites\spr_player_jump</sprite>
       <sprites name="Warrior">
         <sprite>sprites\spr_player_warrior_main</sprite>
+        <sprite>sprites\spr_player_warrior_hurt</sprite>
         <sprite>sprites\spr_player_warrior_attack</sprite>
         <sprite>sprites\spr_player_warrior_down</sprite>
         <sprite>sprites\spr_player_warrior_jump</sprite>
@@ -55,6 +57,7 @@
   <scripts name="scripts">
     <script>scripts\scr_death.gml</script>
   </scripts>
+  <shaders name="shaders"/>
   <objects name="objects">
     <objects name="Enemies">
       <object>objects\obj_default_enemy</object>

@@ -34,6 +34,7 @@ else if(room == rm_playground)
 {
     audio_play_music(snd_music_skyrim, true);
 }
+
 </string>
           </argument>
         </arguments>
@@ -58,7 +59,7 @@ else if(room == rm_playground)
             <kind>1</kind>
             <string>///Set Constants
 
-background_x[0] = view_xview/8;
+background_x[0] = view_xview/4;
 
 
 </string>
@@ -90,10 +91,19 @@ if(room != rm_main_menu)
     draw_set_color(c_red);
     draw_set_alpha(1);
     
-    
-    draw_sprite(spr_hitpoint, 1, view_xview+8, view_yview+8);
-    draw_sprite(spr_hitpoint, 1, view_xview+30, view_yview+8);
-    draw_sprite(spr_hitpoint, 1, view_xview+52, view_yview+8);
+    if(obj_player.hp &gt;= 1)
+    {
+        draw_sprite(spr_hitpoint, 1, view_xview+8, view_yview+8);
+        if(obj_player.hp &gt;= 2)
+        {
+            draw_sprite(spr_hitpoint, 1, view_xview+30, view_yview+8);
+            if(obj_player.hp &gt;=3)
+            {
+            draw_sprite(spr_hitpoint, 1, view_xview+52, view_yview+8);
+            }
+        }
+    }
+
 }
 
 </string>

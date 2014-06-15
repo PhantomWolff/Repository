@@ -39,12 +39,15 @@ grounded = 0; //Touching the ground? 0 = no, 1 = yes.
 dir = 1;
 character = 1;
 attacking = false;
+invincible = false;
+hp = 3;
 
 sprite_main = spr_player_main;  //These are for changing the player's character sets
 sprite_walk = spr_player_walk;
 sprite_jump = spr_player_jump;
 sprite_down = spr_player_down;
 sprite_attack = spr_player_warrior_attack;
+sprite_hurt = spr_player_hurt;
 
 
 //Other configurations
@@ -56,6 +59,30 @@ if (global.checkpointR == room) //decide to spawn on checkpoint
     x = global.checkpointx;
     y = global.checkpointy;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>invincible = false;
+image_alpha = 1;
 </string>
           </argument>
         </arguments>
@@ -132,7 +159,8 @@ if(key_change_character)
         sprite_main = spr_player_warrior_main;
         sprite_walk = spr_player_warrior_walk;
         sprite_jump = spr_player_warrior_jump;
-        sprite_down = spr_player_warrior_down;  
+        sprite_down = spr_player_warrior_down;
+        sprite_hurt = spr_player_warrior_hurt;  
         character = 2;
     }
     else if(character == 2)
@@ -141,6 +169,7 @@ if(key_change_character)
         sprite_walk = spr_player_walk;
         sprite_jump = spr_player_jump;
         sprite_down = spr_player_down;
+        sprite_hurt = spr_player_hurt;
         character = 1;
     }
 }
@@ -152,7 +181,7 @@ if(key_restart_room)
 }
 
 //Direction and Animation
-if(attacking == false)
+if((!attacking))
 {
     if(key_down)
     {
@@ -247,6 +276,22 @@ else
 }
 
 y += vsp;
+
+//Collision with Enemy
+if(place_meeting(x,y,obj_default_enemy) &amp;&amp; (!invincible))
+{
+        if((hp &lt;= 1))
+        {
+            scr_death();
+        }
+        else
+        {
+            alarm[1] = 100;
+            invincible = true;
+            image_alpha = 0.5;
+            hp -= 1;
+        }
+}
 
 </string>
           </argument>

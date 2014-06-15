@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Initialze Variables
-hp = 100;
+hp = 5;
 dir = 1;
 movespeed = 1;
 grav = 0.5;
@@ -82,20 +82,7 @@ if (place_meeting(x,y+vsp,obj_wall))
     vsp = 0;
 }
 
-if(place_meeting(x,y,obj_player))
-{
-    if(obj_player.y &lt; y-16)
-    {
-        with(obj_player){
-        vsp = -6;
-        }
-        instance_destroy();
-    }
-    else
-    {
-        scr_death();
-    }
-}
+
 </string>
           </argument>
         </arguments>
