@@ -24,6 +24,7 @@
     <sprites name="Walls">
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_platform</sprite>
+      <sprite>sprites\spr_platform_moving</sprite>
     </sprites>
     <sprites name="Checkpoint">
       <sprite>sprites\spr_checkpoint_activated</sprite>
@@ -40,9 +41,12 @@
       <object>objects\obj_default_enemy</object>
     </objects>
     <object>objects\obj_player</object>
-    <object>objects\obj_platform</object>
-    <object>objects\obj_wall</object>
     <object>objects\obj_checkpoint</object>
+    <objects name="Walls">
+      <object>objects\obj_platform</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_platform_moving</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\RM_INITIALIZE</room>
