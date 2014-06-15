@@ -42,6 +42,7 @@ character = 1;
 sprite_main = spr_player_main;  //These are for changing the player's character sets
 sprite_walk = spr_player_walk;
 sprite_jump = spr_player_jump;
+sprite_down = spr_player_down;
 
 
 //Other configurations
@@ -97,7 +98,8 @@ if(key_change_character)
     {
         sprite_main = spr_player_warrior_main;
         sprite_walk = spr_player_warrior_walk;
-        sprite_jump = spr_player_warrior_jump;  
+        sprite_jump = spr_player_warrior_jump;
+        sprite_down = spr_player_warrior_down;  
         character = 2;
     }
     else if(character == 2)
@@ -105,6 +107,7 @@ if(key_change_character)
         sprite_main = spr_player_main;
         sprite_walk = spr_player_walk;
         sprite_jump = spr_player_jump;
+        sprite_down = spr_player_down;
         character = 1;
     }
 }
@@ -116,6 +119,10 @@ if(key_restart_room)
 }
 
 //Direction and Animation
+if(key_down)
+{
+    sprite_index = sprite_down;
+}
 if(key_left)
 {
     dir = -1;
@@ -138,7 +145,10 @@ image_xscale = dir; //Set the direction of the player image
 move = -key_left + key_right;
 hsp = move * movespeed;
 if (vsp &lt; 15) vsp += grav;
-if((move == 0) &amp;&amp; (grounded == 1)){sprite_index = sprite_main;}
+if((move == 0) &amp;&amp; (grounded == 1) &amp;&amp; (!key_down))
+{
+sprite_index = sprite_main;
+}
 
 if (key_jump)
 {
