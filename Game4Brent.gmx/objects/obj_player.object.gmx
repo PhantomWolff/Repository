@@ -3,7 +3,7 @@
   <spriteName>spr_player_main</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -38,13 +38,11 @@ djumpspeed = 6;
 grounded = 0; //Touching the ground? 0 = no, 1 = yes.
 dir = 1;
 character = 1;
-attacking = false;
 
 sprite_main = spr_player_main;  //These are for changing the player's character sets
 sprite_walk = spr_player_walk;
 sprite_jump = spr_player_jump;
 sprite_down = spr_player_down;
-sprite_attack = spr_player_warrior_attack;
 
 
 //Other configurations
@@ -56,31 +54,6 @@ if (global.checkpointR == room) //decide to spawn on checkpoint
     x = global.checkpointx;
     y = global.checkpointy;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>image_speed = 0.12;
-sprite_index = sprite_main;
-attacking = false;
 </string>
           </argument>
         </arguments>
@@ -103,7 +76,7 @@ attacking = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string> ///Get Player Input
+            <string>///Get Player Input
 key_left = keyboard_check_direct(ord('A'));
 key_right = keyboard_check_direct(ord('D'));
 key_jump = keyboard_check_pressed(ord('W'));
@@ -147,34 +120,24 @@ if(key_restart_room)
 }
 
 //Direction and Animation
-if(attacking == false)
+if(key_down)
 {
-    if(key_down)
+    sprite_index = sprite_down;
+}
+if(key_left)
+{
+    dir = -1;
+    if(grounded == 1) //Ensure you're grounded
     {
-        sprite_index = sprite_down;
+        sprite_index = sprite_walk;
     }
-    if(key_left)
+}
+if(key_right)
+{
+    dir = 1;
+    if(grounded == 1) //Ensure you're grounded
     {
-        dir = -1;
-        if(grounded == 1) //Ensure you're grounded
-        {
-            sprite_index = sprite_walk;
-        }
-    }
-    if(key_right)
-    {
-        dir = 1;
-        if(grounded == 1) //Ensure you're grounded
-        {
-            sprite_index = sprite_walk;
-        }
-    }
-    if((key_attack) &amp;&amp; (character == 2))
-    {
-        image_speed = 0.3;
-        sprite_index = sprite_attack;
-        alarm[0] = 15;
-        attacking = true;
+        sprite_index = sprite_walk;
     }
 }
 image_xscale = dir; //Set the direction of the player image
@@ -183,9 +146,9 @@ image_xscale = dir; //Set the direction of the player image
 move = -key_left + key_right;
 hsp = move * movespeed;
 if (vsp &lt; 15) vsp += grav;
-if((move == 0) &amp;&amp; (grounded == 1) &amp;&amp; (!key_down) &amp;&amp; (attacking == false))
+if((move == 0) &amp;&amp; (grounded == 1) &amp;&amp; (!key_down))
 {
-    sprite_index = sprite_main;
+sprite_index = sprite_main;
 }
 
 if (key_jump)
