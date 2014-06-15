@@ -125,6 +125,7 @@
     <instance objName="obj_checkpoint" x="336" y="720" name="inst_4EFC8186" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_checkpoint" x="384" y="840" name="inst_43B808B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_checkpoint" x="72" y="828" name="inst_74D5C117" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+<<<<<<< HEAD
     <instance objName="obj_wall" x="624" y="864" name="inst_5DDEF09F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="696" y="936" name="inst_54A3072A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="720" y="936" name="inst_EF07206F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -164,6 +165,13 @@
     <instance objName="obj_wall" x="960" y="840" name="inst_691614DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform_moving" x="1008" y="840" name="inst_860C1545" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_default_enemy" x="792" y="912" name="inst_7F39FFD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+=======
+    <instance objName="obj_platform" x="84" y="852" name="inst_9C243C62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="168" y="744" name="inst_F560BB5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="60" y="852" name="inst_60BB6723" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OBJ_CONTROLLER" x="48" y="660" name="inst_A8FB5227" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform_moving" x="492" y="876" name="inst_15D5621E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+>>>>>>> f8be01e5819533cb5a5b218db400c42287388296
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
