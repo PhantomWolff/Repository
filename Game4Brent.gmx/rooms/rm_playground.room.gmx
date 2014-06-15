@@ -130,6 +130,7 @@
     <instance objName="obj_platform" x="60" y="852" name="inst_60BB6723" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="OBJ_CONTROLLER" x="48" y="660" name="inst_A8FB5227" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform_moving" x="492" y="876" name="inst_15D5621E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_weapon" x="72" y="876" name="inst_1321D392" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

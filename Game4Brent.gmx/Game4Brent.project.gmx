@@ -36,6 +36,7 @@
       <sprite>sprites\spr_checkpoint_activated</sprite>
       <sprite>sprites\spr_checkpoint</sprite>
     </sprites>
+    <sprite>sprites\spr_weapon_test</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_sky</background>
@@ -56,6 +57,7 @@
       <object>objects\obj_platform_moving</object>
     </objects>
     <object>objects\OBJ_CONTROLLER</object>
+    <object>objects\obj_weapon</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\RM_INITIALIZE</room>
