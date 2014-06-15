@@ -83,6 +83,7 @@ key_jump = keyboard_check_pressed(ord('W'));
 key_down = keyboard_check_direct(ord('S'));
 key_change_character = keyboard_check_released(ord('C'));
 key_restart_room = keyboard_check_released(ord('R'));
+key_attack = keyboard_check_pressed(vk_space);
 
 
 //React To Inputs
