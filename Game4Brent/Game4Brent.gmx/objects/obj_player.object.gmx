@@ -81,6 +81,11 @@ if (global.checkpointR == room) //decide to spawn on checkpoint
             <string>image_speed = 0.12;
 sprite_index = sprite_main;
 attacking = false;
+with(obj_weapon)
+{
+    instance_destroy();
+}
+
 </string>
           </argument>
         </arguments>
@@ -175,6 +180,7 @@ if(attacking == false)
         sprite_index = sprite_attack;
         alarm[0] = 15;
         attacking = true;
+        instance_create(x,y,obj_weapon);
     }
 }
 image_xscale = dir; //Set the direction of the player image
