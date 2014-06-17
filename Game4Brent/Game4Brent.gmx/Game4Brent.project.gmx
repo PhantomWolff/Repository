@@ -11,7 +11,12 @@
       <sound>sound\snd_music_skyrim</sound>
     </sounds>
     <sounds name="SFX">
+      <sound>sound\snd_get_potion</sound>
       <sound>sound\snd_get_coin</sound>
+      <sound>sound\snd_sword_attack</sound>
+      <sound>sound\snd_hurt</sound>
+      <sound>sound\snd_enemy_death</sound>
+      <sound>sound\snd_jump</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
