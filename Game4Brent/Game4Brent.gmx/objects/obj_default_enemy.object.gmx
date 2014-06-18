@@ -61,20 +61,32 @@ image_xscale = dir;
 hsp = dir * movespeed;
 vsp += grav;
 
-
 //Damage Logic
 var inst;
 inst = instance_place(x, y, obj_weapon);
 
 if (inst != noone)
 {  
+    //Ben: Feel free to change these variables to anything of your liking
+    //Knockback Logic
+    image_xscale = sign(inst.x -x);
+    hsp = 4 * -image_xscale;
+    
+    vsp = -5; //Current Vertical effect inst applied. need to look into this?
+    grav = .5;
+    
+
    if (hp &lt;= 0)
    {   
-        instance_destroy();
+        //Temp Removal For Debuggin Knockback
+        //instance_destroy();
    }
    else
    {
-        hp -= inst.damage;
+        //hp -= inst.damage;
+        //Make Enemy Invincible
+        //Not sure of menthod as of yet,
+        //Still need to establish hp standards
    }     
 }
 
@@ -106,11 +118,11 @@ if(place_meeting(x,y,obj_player))
         with(obj_player){
         vsp = -6;
         }
-        instance_destroy();
+        //instance_destroy();
     }
     else
     {
-        scr_death();
+        //scr_death();
     }
 }
 </string>
