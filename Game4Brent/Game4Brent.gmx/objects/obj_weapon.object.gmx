@@ -29,7 +29,7 @@
 damage = 1;
 
 ///Play weapon sound
-audio_play_sound(snd_sword_attack, 3, false);
+audio_play_sound(snd_sword_attack1, 3, false);
 </string>
           </argument>
         </arguments>
@@ -74,7 +74,7 @@ if (inst != noone)
    if (inst.hp &lt;= 0)
    {   
         with (inst) instance_destroy();
-        audio_play_sound(snd_enemy_death, 3, false);
+        audio_play_sound(snd_enemy_death1, 3, false);
    }
    else
    {

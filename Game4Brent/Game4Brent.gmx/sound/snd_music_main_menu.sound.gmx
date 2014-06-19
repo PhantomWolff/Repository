@@ -2,10 +2,10 @@
 <sound>
   <kind>0</kind>
   <extension>.wav</extension>
-  <origname>C:\Program Files (x86)\Audacity\8 bit get lucky (edit).wav</origname>
+  <origname>C:\Users\David\Documents\GitHub\Repository\Game4Brent\Game4Brent.gmx\sound\audio\music\snd_music_main_menu.wav</origname>
   <effects>0</effects>
   <volume>
-    <volume>1</volume>
+    <volume>0.28</volume>
   </volume>
   <pan>0</pan>
   <bitRates>

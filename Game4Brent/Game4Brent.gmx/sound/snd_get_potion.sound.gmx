@@ -2,10 +2,10 @@
 <sound>
   <kind>0</kind>
   <extension>.wav</extension>
-  <origname>C:\Users\David\Documents\GitHub\Repository\Game4Brent\Game4Brent.gmx\sound\snd_get_potion.wav</origname>
+  <origname>C:\Users\David\Documents\GitHub\Repository\Game4Brent\Game4Brent.gmx\sound\audio\snd_get_potion.wav</origname>
   <effects>0</effects>
   <volume>
-    <volume>1</volume>
+    <volume>0.69</volume>
   </volume>
   <pan>0</pan>
   <bitRates>

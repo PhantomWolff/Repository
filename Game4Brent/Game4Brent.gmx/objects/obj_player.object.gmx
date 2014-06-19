@@ -225,20 +225,22 @@ if((move == 0) &amp;&amp; (grounded == 1) &amp;&amp; (!key_down) &amp;&amp; (att
 
 if (key_jump)
 {
+
     if (place_meeting(x,y+1,obj_wall))
     {
         vsp = -jumpspeed;
         sprite_index = sprite_jump;
-        audio_play_sound(snd_jump, 3, false);
+        audio_play_sound(snd_jump1, 3, false);
     }   
     else
     {
-        if(djump)
+
+        if(djump) 
         {
             vsp = -djumpspeed;
             sprite_index = sprite_jump;
             djump = 0;
-            audio_play_sound(snd_jump, 3, false);
+            audio_play_sound(snd_jump2, 3, false);
         }
     }
 }
@@ -290,7 +292,7 @@ if(place_meeting(x,y,obj_default_enemy) &amp;&amp; (!invincible))
         {
             alarm[1] = 100;
             invincible = true;
-            audio_play_sound(snd_hurt, 3, false);
+            audio_play_sound(snd_player_hurt, 3, false);
             image_alpha = 0.5;
             hp -= 1;
         }

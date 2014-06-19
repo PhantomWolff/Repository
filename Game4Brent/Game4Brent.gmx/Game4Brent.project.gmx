@@ -6,17 +6,37 @@
   <NewExtensions/>
   <sounds name="sound">
     <sounds name="Music">
-      <sound>sound\snd_music_love</sound>
       <sound>sound\snd_music_main_menu</sound>
+      <sound>sound\snd_music_rolemusic_02</sound>
+      <sound>sound\snd_music_rolemusic_04</sound>
+      <sound>sound\snd_music_shallow_02</sound>
+      <sound>sound\snd_music_shallow_03</sound>
+      <sound>sound\snd_music_roccow_05</sound>
+      <sound>sound\snd_music_get_lucky</sound>
       <sound>sound\snd_music_skyrim</sound>
+      <sound>sound\snd_music_love</sound>
     </sounds>
     <sounds name="SFX">
-      <sound>sound\snd_get_potion</sound>
-      <sound>sound\snd_get_coin</sound>
-      <sound>sound\snd_sword_attack</sound>
-      <sound>sound\snd_hurt</sound>
-      <sound>sound\snd_enemy_death</sound>
-      <sound>sound\snd_jump</sound>
+      <sounds name="Player">
+        <sound>sound\snd_jump1</sound>
+        <sound>sound\snd_jump2</sound>
+        <sound>sound\snd_player_hurt</sound>
+        <sound>sound\snd_sword_attack1</sound>
+        <sound>sound\snd_sword_attack2</sound>
+        <sound>sound\snd_sword_attack3</sound>
+      </sounds>
+      <sounds name="Enemy">
+        <sound>sound\snd_enemy_hurt1</sound>
+        <sound>sound\snd_enemy_hurt2</sound>
+        <sound>sound\snd_enemy_hurt3</sound>
+        <sound>sound\snd_enemy_death1</sound>
+      </sounds>
+      <sounds name="Item">
+        <sound>sound\snd_get_coin</sound>
+        <sound>sound\snd_get_potion</sound>
+        <sound>sound\snd_get_item1</sound>
+        <sound>sound\snd_get_item2</sound>
+      </sounds>
     </sounds>
   </sounds>
   <sprites name="sprites">
