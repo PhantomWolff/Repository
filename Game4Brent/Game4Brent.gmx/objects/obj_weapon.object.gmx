@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_weapon_test</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize Variables
-damage = 20;
+damage = 1;
 </string>
           </argument>
         </arguments>
@@ -54,12 +54,12 @@ damage = 20;
 
 if (obj_player.dir == 1)
 {
-    x = obj_player.x + 25; 
+    x = obj_player.x + 32; 
     y = obj_player.y;
 }
 else
 {
-    x = obj_player.x - 25; 
+    x = obj_player.x - 32; 
     y = obj_player.y;
 }
     
@@ -68,13 +68,13 @@ inst = instance_place(x, y, obj_default_enemy);
 
 if (inst != noone)
 {  
-   if (inst.health &lt;= 0)
+   if (inst.hp &lt;= 0)
    {   
         with (inst) instance_destroy();
    }
    else
    {
-        inst.health -= damage;
+        inst.hp -= damage;
    }     
 }
 
